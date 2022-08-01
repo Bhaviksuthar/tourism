@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Tourism Project</string>
+    <string name="your_tours">Your Tours</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="don_t_worry_we_are_here">don\'t worry we are here</string>
+    <string name="enter_your_registered_email">Enter your registered Email</string>
+    <string name="recover_password">Recover Password</string>
+    <string name="go_back_to_login_screen">Go back to login screen</string>
+    <string name="welcome_to_ucc_tours">Welcome to UCC Tours</string>
+    <string name="logout">Logout</string>
+</resources>

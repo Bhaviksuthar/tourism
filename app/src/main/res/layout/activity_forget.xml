@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ForgetActivity">
+
+    <RelativeLayout
+        android:id="@+id/centerLine3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/centerLine3"
+        android:layout_marginBottom="120dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:text="@string/forgot_password"
+            android:textColor="#0C0C0C"
+            android:textSize="30sp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:text="@string/don_t_worry_we_are_here"
+            android:textColor="#0B0A0A"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/centerLine3"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp">
+
+        <EditText
+            android:id="@+id/forgotEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_your_registered_email"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:minHeight="47dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:backgroundTint="#DACFCF"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
+
+        </EditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/RecoveryBtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/email"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30sp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/recover_password"
+        android:textSize="20sp"
+        app:backgroundTint="#673AB7"
+        tools:ignore="TextContrastCheck">
+
+    </Button>
+
+    <TextView
+        android:id="@+id/goTOTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RecoveryBtn"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/go_back_to_login_screen"
+        android:textColor="#10100F"
+        android:textSize="24sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+</RelativeLayout>
