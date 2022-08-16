@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.UserDetailsActivity"
+    android:background="#C5C0C0">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@drawable/home_bg"
+            android:id="@+id/toolbar8">
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/OwnerTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:text="Ticket Owner Name"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/getOwnerNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OwnerTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Name"
+        android:textColor="#673AB7"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        tools:ignore="TextContrastCheck">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/NameTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/getOwnerNameTV"
+        android:text="Place Name"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+        <TextView
+            android:id="@+id/getPlaceNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/NameTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Place Name"
+            android:textColor="#673AB7"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            tools:ignore="TextContrastCheck">
+
+        </TextView>
+
+    <TextView
+        android:id="@+id/PriceTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/getPlaceNameTV"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="Place Price"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+        <TextView
+            android:id="@+id/getPlacePriceTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/PriceTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Place Price"
+            android:textColor="#673AB7"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            tools:ignore="TextContrastCheck">
+
+        </TextView>
+
+    <TextView
+        android:id="@+id/DaysTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/getPlacePriceTV"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="Total Days of Tour:"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+        <TextView
+            android:id="@+id/getPlaceDaysTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/getPlacePriceTV"
+            android:layout_marginStart="232dp"
+            android:layout_marginTop="34dp"
+            android:text="Place Days"
+            android:textColor="#673AB7"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            tools:ignore="TextContrastCheck">
+
+        </TextView>
+
+    <TextView
+        android:id="@+id/TotalPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/getPlaceDaysTV"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="20dp"
+        android:text="No. of People:"
+        android:textColor="#0E0E10"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:ignore="TextContrastCheck">
+
+    </TextView>
+
+        <TextView
+            android:id="@+id/TotalPeopleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/getPlaceDaysTV"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="20dp"
+            android:text="5"
+            android:textColor="#3F51B5"
+            android:textSize="24sp"
+            android:textStyle="normal"
+            tools:ignore="TextContrastCheck">
+
+        </TextView>
+
+    <TextView
+        android:id="@+id/AddressTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TotalPeopleTV"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="20dp"
+        android:text="Address of Ticket Checking"
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:ignore="TextContrastCheck">
+
+    </TextView>
+
+        <TextView
+            android:id="@+id/getAddressTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/AddressTV"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="address"
+            android:textAlignment="center"
+            android:textColor="#3E3C3C"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            tools:ignore="TextContrastCheck">
+
+        </TextView>
+    </RelativeLayout>
+</ScrollView>

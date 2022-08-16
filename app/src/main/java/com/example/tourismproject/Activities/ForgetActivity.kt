@@ -1,4 +1,4 @@
-package com.example.tourismproject
+package com.example.tourismproject.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.tourismproject.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -28,7 +29,7 @@ class ForgetActivity : AppCompatActivity() {
         auth = Firebase.auth
 
         gotoTv.setOnClickListener {
-            startActivity(Intent(this,LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
         }
 
         recoverBtn.setOnClickListener {
@@ -48,7 +49,7 @@ class ForgetActivity : AppCompatActivity() {
             if (it.isSuccessful){
                 Toast.makeText(this,"Password reset link send successfully to your email",Toast.LENGTH_LONG).show()
                 finish()
-                startActivity(Intent(this,LoginActivity::class.java))
+                startActivity(Intent(this, LoginActivity::class.java))
             }
             else{
                 Toast.makeText(this,"you entered wrong email",Toast.LENGTH_LONG).show()

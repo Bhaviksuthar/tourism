@@ -3,12 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_bus.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_bus_tour.xml" value="0.23489583333333333" />
+        <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_car.xml" value="0.24739583333333334" />
         <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_dash_board.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_flight.xml" value="0.23489583333333333" />
+        <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_flight_tour.xml" value="0.23489583333333333" />
         <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_forget.xml" value="0.24375" />
         <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_login.xml" value="0.24375" />
         <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_main.xml" value="0.24375" />
+        <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_places.xml" value="0.24739583333333334" />
         <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_profile.xml" value="0.264" />
         <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_sign_up.xml" value="0.24375" />
+        <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_ticket.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_train_tour.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/activity_user_details.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/fragment_dash_board.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/fragment_detail.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/fragment_profile.xml" value="0.23489583333333333" />
+        <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/places_layout.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/layout/ticket_layout.xml" value="0.24739583333333334" />
         <entry key="..\:/Users/BHAVIK SUTHAR/OneDrive/Documents/MY PROGRAMS/Android new projects/TourismProject/app/src/main/res/menu/menuitem.xml" value="0.24739583333333334" />
       </map>
     </option>

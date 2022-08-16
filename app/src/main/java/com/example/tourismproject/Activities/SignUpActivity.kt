@@ -1,4 +1,4 @@
-package com.example.tourismproject
+package com.example.tourismproject.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,19 +8,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.tourismproject.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
-import com.google.android.material.button.MaterialButton
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.FirebaseDatabase.*
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
-import java.util.*
 import kotlin.collections.HashMap
-import com.google.firebase.database.FirebaseDatabase.getInstance as getInstance1
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -30,15 +23,14 @@ class SignUpActivity : AppCompatActivity() {
     lateinit var usernameEdt : EditText
     lateinit var signUpBtn : Button
     lateinit var userTV : TextView
+    lateinit var email: String
+    lateinit var username: String
+    lateinit var password: String
+    lateinit var phone: String
 
-    lateinit var auth : FirebaseAuth
-    lateinit var firestore : FirebaseFirestore
-
-    companion object{
-        public lateinit var email : String
-        public lateinit var password : String
-        public lateinit var phone : String
-        public lateinit var username : String
+    object FirebaseUtil{
+        val auth : FirebaseAuth = FirebaseAuth.getInstance()
+        val user : FirebaseUser? = auth.currentUser
     }
 
 
@@ -52,23 +44,20 @@ class SignUpActivity : AppCompatActivity() {
         userTV = findViewById(R.id.signInTXT)
         usernameEdt = findViewById(R.id.user_name)
         phoneEdt = findViewById(R.id.phone)
-        auth = Firebase.auth
-        val user : FirebaseUser? = auth.currentUser
-        firestore = FirebaseFirestore.getInstance()
-
 
         userTV.setOnClickListener{
-            startActivity(Intent(this,LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
         }
+
 
         signUpBtn.setOnClickListener {
 
             try {
 
-                email = emailEdt.text.toString().trim()
-                password = passwordEdt.text.toString().trim()
-                username = usernameEdt.text.toString().trim()
-                phone = phoneEdt.text.toString().trim()
+               email = emailEdt.text.toString().trim()
+               password = passwordEdt.text.toString().trim()
+               username = usernameEdt.text.toString().trim()
+               phone = phoneEdt.text.toString().trim()
 
                 if (email.isEmpty() || password.isEmpty() || username.isEmpty() || phone.isEmpty()) {
                     Toast.makeText(this, "Please enter all required fields", Toast.LENGTH_SHORT)
@@ -78,7 +67,6 @@ class SignUpActivity : AppCompatActivity() {
                 } else {
 //                do signUp code
 //                    val phoneNo = Integer.parseInt(phone)
-
 
                     createUser(email, password)
                     addData(email,password,username,phone)
@@ -94,18 +82,25 @@ class SignUpActivity : AppCompatActivity() {
     private fun addData(email : String,password : String ,username : String ,phone : String){
         try {
 
-            val map = HashMap<String, Any>()
-            val reference: DocumentReference = firestore.collection("UserDetails").document(email)
-                .collection("User").document()
+            val reference : DatabaseReference = FirebaseDatabase.getInstance().getReference("UserDetails").child(username)
 
+            val map = HashMap<String,Any>()
             map["USERNAME"] = username
             map["EMAIL"] = email
+            map["PASSWORD"] = password
             map["PHONE"] = phone
 
-            reference.set(map).addOnSuccessListener {
-                Toast.makeText(this, "Added", Toast.LENGTH_SHORT).show()
+
+            val reference2 : DatabaseReference = FirebaseDatabase.getInstance().getReference("UserName")
+            val map2 = HashMap<String,Any>()
+            map2["USER"] = username
+
+            reference2.setValue(map2).addOnSuccessListener {}.addOnFailureListener {}
+
+            reference.setValue(map).addOnSuccessListener {
+                Toast.makeText(this,"Added",Toast.LENGTH_SHORT).show()
             }.addOnFailureListener {
-                Toast.makeText(this, "Failure", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"error = "+it.message,Toast.LENGTH_SHORT).show()
             }
         }
         catch (e : Exception){
@@ -115,7 +110,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun createUser(email:String, password:String){
-        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener {
+        FirebaseUtil.auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener {
             if (it.isSuccessful){
                 Toast.makeText(this,"SignUp successful",Toast.LENGTH_SHORT).show()
                 authenticateUser()
@@ -124,7 +119,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun authenticateUser(){
-        val user : FirebaseUser? = auth.currentUser
+        val user : FirebaseUser? = FirebaseUtil.auth.currentUser
         user?.sendEmailVerification()?.addOnCompleteListener {
             if (it.isSuccessful) {
                 Toast.makeText(
@@ -132,7 +127,7 @@ class SignUpActivity : AppCompatActivity() {
                     "Email verification link sent successfully to your email",
                     Toast.LENGTH_SHORT
                 ).show()
-                auth.signOut()
+                FirebaseUtil.auth.signOut()
                 finish()
                 startActivity(Intent(this, LoginActivity::class.java))
             }

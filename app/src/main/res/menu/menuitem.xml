@@ -2,10 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/logout"
-        android:title="@string/logout"/>
+        android:id="@+id/details"
+        android:title="Bookings"
+        android:icon="@drawable/details"/>
+
+
+    <item
+        android:id="@+id/dashBoard"
+        android:title="DashBoard"
+        android:icon="@drawable/home"/>
 
     <item
         android:id="@+id/profile"
-        android:title="Profile"/>
+        android:title="Profile"
+        android:icon="@drawable/profile"/>
+
 </menu>

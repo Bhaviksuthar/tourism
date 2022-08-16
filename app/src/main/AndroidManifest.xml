@@ -16,19 +16,34 @@
         android:theme="@style/Theme.TourismProject"
         tools:targetApi="31">
         <activity
-            android:name=".ProfileActivity"
+            android:name=".Activities.UserDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".DashBoardActivity"
+            android:name=".Activities.TicketActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgetActivity"
+            android:name=".Activities.PlacesActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".Activities.FlightActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activities.BusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.CarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.DashBoardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.ForgetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,7 +52,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="true" />
     </application>
 

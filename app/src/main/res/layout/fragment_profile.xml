@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.ProfileFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/appBar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@drawable/home_bg"
+                android:id="@+id/toolbar2">
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ImageView
+            android:id="@+id/profilePhoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/appBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/border"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/ProfileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profilePhoto"
+            android:layout_marginTop="5dp"
+            android:text="UserName"
+            android:textAlignment="center"
+            android:textColor="#7539B7"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:id="@+id/ProfileEmail"
+            android:layout_below="@+id/ProfileName"
+            android:textSize="20sp"
+            android:textColor="#7539B7"
+            android:textStyle="bold"
+            android:layout_marginTop="40dp"
+            android:gravity="start"
+            android:paddingStart="20dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="5dp"
+            android:drawableTint="#7539B7"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/ProfileNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ProfileEmail"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:drawableStart="@drawable/ic_baseline_smartphone_24"
+            android:drawablePadding="5dp"
+            android:drawableTint="#7539B7"
+            android:gravity="start"
+            android:paddingStart="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Phone"
+            android:textColor="#7539B7"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/EditProfileBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/ProfileNumber"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:text="Edit Profile"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="10dp">
+
+        </com.google.android.material.button.MaterialButton>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/EditProfileBtn"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/luggage"
+            android:scaleType="centerCrop"
+            android:id="@+id/Icon">
+
+        </ImageView>
+
+    </RelativeLayout>
+
+</ScrollView>

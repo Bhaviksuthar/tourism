@@ -8,4 +8,13 @@
     <string name="go_back_to_login_screen">Go back to login screen</string>
     <string name="welcome_to_ucc_tours">Welcome to UCC Tours</string>
     <string name="logout">Logout</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="place_description">Place Description</string>
+    <string name="description">Description :</string>
+    <string name="place">Place</string>
+    <string name="place_name">Place Name :</string>
+    <string name="note">Note: [The price and days are fixed for this places. ]</string>
+    <string name="note2">Note: [Food facilities will be given to you, Or main owner name will required at the time of real ticket checking at arrival address Or this ticket is confirm ticket for your online booking.]</string>
+    <string name="confirm_booking">Confirm Booking</string>
 </resources>
