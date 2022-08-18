@@ -113,16 +113,31 @@
         </com.google.android.material.button.MaterialButton>
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerHorizontal="true"
+            android:id="@+id/Icon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_below="@+id/EditProfileBtn"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:src="@drawable/luggage"
             android:scaleType="centerCrop"
-            android:id="@+id/Icon">
+            android:src="@drawable/luggage">
 
         </ImageView>
+
+        <Button
+            android:id="@+id/LogOutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/Icon"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="20sp"
+            android:layout_marginEnd="70dp"
+            android:text="LogOut"
+            android:textSize="16sp"
+            app:backgroundTint="#673AB7"
+            tools:ignore="TextContrastCheck">
+
+        </Button>
 
     </RelativeLayout>
 

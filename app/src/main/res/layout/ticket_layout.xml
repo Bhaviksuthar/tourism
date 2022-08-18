@@ -12,6 +12,7 @@
             android:id="@+id/ticketImg"
             android:layout_width="match_parent"
             android:layout_height="150dp"
+
             android:scaleType="centerCrop"
             android:src="@drawable/ticket">
 
@@ -21,10 +22,10 @@
             android:id="@+id/NameTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_marginStart="50dp"
             android:layout_marginTop="30dp"
             android:text="Ticket For"
-            android:layout_centerHorizontal="true"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold">
@@ -35,15 +36,29 @@
             android:id="@+id/GetNameTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_marginStart="50dp"
             android:layout_marginTop="70dp"
             android:text="placename"
-            android:layout_centerHorizontal="true"
             android:textColor="#ED0D0D"
             android:textSize="28sp"
             android:textStyle="bold">
 
         </TextView>
+
+        <ImageView
+            android:id="@+id/popMenu"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_baseline_menu_24"
+            android:layout_below="@+id/ticketImg"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp">
+
+        </ImageView>
 
     </RelativeLayout>
 </LinearLayout>

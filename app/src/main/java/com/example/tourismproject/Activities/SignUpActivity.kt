@@ -11,8 +11,10 @@ import android.widget.Toast
 import com.example.tourismproject.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 import kotlin.collections.HashMap
 
 class SignUpActivity : AppCompatActivity() {
@@ -27,11 +29,7 @@ class SignUpActivity : AppCompatActivity() {
     lateinit var username: String
     lateinit var password: String
     lateinit var phone: String
-
-    object FirebaseUtil{
-        val auth : FirebaseAuth = FirebaseAuth.getInstance()
-        val user : FirebaseUser? = auth.currentUser
-    }
+    lateinit var auth : FirebaseAuth
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +42,8 @@ class SignUpActivity : AppCompatActivity() {
         userTV = findViewById(R.id.signInTXT)
         usernameEdt = findViewById(R.id.user_name)
         phoneEdt = findViewById(R.id.phone)
+        auth = Firebase.auth
+        val user : FirebaseUser? = auth.currentUser
 
         userTV.setOnClickListener{
             startActivity(Intent(this, LoginActivity::class.java))
@@ -110,7 +110,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun createUser(email:String, password:String){
-        FirebaseUtil.auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener {
+        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener {
             if (it.isSuccessful){
                 Toast.makeText(this,"SignUp successful",Toast.LENGTH_SHORT).show()
                 authenticateUser()
@@ -119,15 +119,11 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun authenticateUser(){
-        val user : FirebaseUser? = FirebaseUtil.auth.currentUser
+        val user : FirebaseUser? = auth.currentUser
         user?.sendEmailVerification()?.addOnCompleteListener {
             if (it.isSuccessful) {
-                Toast.makeText(
-                    this,
-                    "Email verification link sent successfully to your email",
-                    Toast.LENGTH_SHORT
-                ).show()
-                FirebaseUtil.auth.signOut()
+                Toast.makeText(this, "Email verification link sent successfully to your email", Toast.LENGTH_SHORT).show()
+                auth.signOut()
                 finish()
                 startActivity(Intent(this, LoginActivity::class.java))
             }

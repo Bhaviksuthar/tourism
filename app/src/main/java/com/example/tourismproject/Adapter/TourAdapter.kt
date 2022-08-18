@@ -1,15 +1,24 @@
 package com.example.tourismproject.Adapter
 
+import android.app.AlertDialog
+import android.app.Application
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
+import android.os.Build
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.PopupMenu
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tourismproject.Activities.UserDetailsActivity
 import com.example.tourismproject.Model.TourModel
 import com.example.tourismproject.R
+import com.example.tourismproject.ViewModel.TourViewModel
 
 class TourAdapter(context: Context, list:List<TourModel>) : RecyclerView.Adapter<TourAdapter.TourViewHolder>() {
 
@@ -23,9 +32,11 @@ class TourAdapter(context: Context, list:List<TourModel>) : RecyclerView.Adapter
 
     class TourViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var placeName : TextView
+        var popMenu : ImageView
 
         init {
             placeName = itemView.findViewById(R.id.GetNameTV)
+            popMenu = itemView.findViewById(R.id.popMenu)
         }
     }
 
@@ -34,6 +45,7 @@ class TourAdapter(context: Context, list:List<TourModel>) : RecyclerView.Adapter
         return TourViewHolder(view)
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onBindViewHolder(holder: TourViewHolder, position: Int) {
         val model : TourModel = list[position]
         holder.placeName.text = model.placeName
@@ -53,6 +65,31 @@ class TourAdapter(context: Context, list:List<TourModel>) : RecyclerView.Adapter
             catch (e:Exception){
                 e.printStackTrace()
             }
+
+
+        }
+
+        holder.popMenu.setOnClickListener {
+            val popMenu : PopupMenu = PopupMenu(it.context,it)
+            popMenu.gravity = Gravity.END
+            popMenu.menu.add("Cancel The Ticket").setOnMenuItemClickListener {
+
+                val alertDialog : AlertDialog.Builder = AlertDialog.Builder(context)
+                    .setTitle("Do you want to cancel the ticket")
+                    .setPositiveButton("Yes"){dialog,which->
+                        val viewModel : TourViewModel = TourViewModel(Application())
+                        viewModel.delete(list[position].id)
+                    }
+                    .setNegativeButton("No"){dialog,which->
+                        dialog.dismiss()
+                    }
+
+                alertDialog.show()
+
+                return@setOnMenuItemClickListener true
+            }
+
+            popMenu.show()
         }
     }
 
